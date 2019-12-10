@@ -25,10 +25,10 @@ docker-compose build
 
 ### Database
 
-Create MySQL database and credentials and configure the same in:
+Create SQL Server database and credentials and configure the same in:
 
 ```
-./src/main/webapp/WEB-INF/config.properties
+./src/main/webapp/WEB-INF/applicationContext.xml
 ```
 
 ### Schema Import
@@ -36,7 +36,7 @@ Create MySQL database and credentials and configure the same in:
 Import the schema into MySQL database:
 
 ```
-$ mysql -u USER -pPASSWORD dvja < ./db/schema.sql
+Run /db/schema.sql on the database you created
 ```
 
 ## Build
@@ -55,7 +55,7 @@ $ mvn jetty:run
 
 This will start the `Jetty` server on port 8080.
 
-## Deploy in Tomcat Server
+## Deploy in Tomcat Server (IN TOMCAT IT MUST BE ROOT.war, because links are absolute)
 
 * Build app
 * Copy targets/dvja.war to Tomcat webapps directory

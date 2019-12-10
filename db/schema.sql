@@ -16,45 +16,43 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `products`
+-- Table structure for table "products"
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS "products";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `code` varchar(45) NOT NULL,
-  `tags` text,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `code_UNIQUE` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+CREATE TABLE "products" (
+                            "id" int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+                            "name" varchar(100) NOT NULL,
+                            "description" text NOT NULL,
+                            "code" varchar(45) NOT NULL,
+                            "tags" text,
+                            "created_at" datetime NOT NULL,
+                            "updated_at" datetime NOT NULL,
+                            CONSTRAINT "id_UNIQUE" UNIQUE ("id"),
+                            CONSTRAINT "code_UNIQUE" UNIQUE ("code")
+) --ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `users`
+-- Table structure for table "users"
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS "users";
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `login` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(200) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `role` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `login_UNIQUE` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+CREATE TABLE "users" (
+                         "id" int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+                         "name" varchar(100) NOT NULL,
+                         "login" varchar(100) NOT NULL,
+                         "email" varchar(100) NOT NULL,
+                         "password" varchar(200) NOT NULL,
+                         "created_at" datetime NOT NULL,
+                         "updated_at" datetime NOT NULL,
+                         "role" varchar(45) DEFAULT NULL,
+                         CONSTRAINT "login_UNIQUE" UNIQUE ("login")
+)-- ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

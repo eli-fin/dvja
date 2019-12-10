@@ -11,15 +11,11 @@
   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
        xmlns:tx="http://www.springframework.org/schema/tx">
 
-    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="/WEB-INF/config.properties" />
-    </bean>
-
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://${mysql.host}/${mysql.db}" />
-        <property name="username" value="${mysql.username}" />
-        <property name="password" value="${mysql.password}" />
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url" value="jdbc:sqlserver://;instanceName=SQLExpress;databaseName=__dvja" />
+        <property name="username" value="sa" />
+        <property name="password" value="Cx123456!" />
     </bean>
 
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
@@ -27,7 +23,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="database" value="MYSQL" />
+                <property name="database" value="SQL_SERVER" />
                 <property name="showSql" value="true" />
             </bean>
         </property>

@@ -160,6 +160,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.0.M2</version>
                 <configuration>
+                    <jvmArgs>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArgs>
                     <stopKey>CTRL+C</stopKey>
                     <stopPort>8999</stopPort>
                     <systemProperties>

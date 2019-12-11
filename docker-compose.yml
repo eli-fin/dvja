@@ -12,6 +12,7 @@ services:
       - mysql
     ports:
       - "8080:8080"
+      - "5005:5005"
     environment:
       MYSQL_USER: root
       MYSQL_PASSWORD: ec95c258266b8e985848cae688effa2b

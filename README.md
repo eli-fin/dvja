@@ -1,5 +1,18 @@
 # Damn Vulnerable Java Application
 
+## IAST section - To run the application do the following (on a linux machine, make sure you installed git, docker.io and docker-compose):
+1. git clone https://github.com/eli-fin/dvja
+2. git checkout fix_docker
+3. sudo docker-compose build && sudo docker-compose up
+
+To run with agent:
+1. In file: docker-compose.yml, under app, add:
+volumes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;\- ./cxiast-java-agent:/app/cx-agent
+2. In file: pom.xml, under org.eclipse.jetty jvm args, add -javaagent:/app/cx-agent/cx-launcher.jar
+3. Download and extract agent to dvja folder
+4. Run as above
+
 ## Quick Start
 
 Install Docker and Docker Compose.
